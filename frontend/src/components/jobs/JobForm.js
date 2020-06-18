@@ -174,10 +174,8 @@ function JobForm({ data, errors, handleChange, handleDateChange, selectDropdown,
                   <Dropdown
                     fluid
                     selection
-                    // error={errors.status}
                     name='status'
                     value={data.status}
-                    // placeholder={newJobStatus}
                     options={options}
                     onChange={selectDropdown}
                   />

@@ -9,10 +9,13 @@ function TaskLabel(category) {
   const filterCategories = (array, string) => {
     return array.filter(item => {
       if (item.value === string) {
-        return item
+        return item 
+      } else {
+        return null 
       }
     })
   }
+  
   const filteredCategory = filterCategories(taskCategories, string)
   
   const text = filteredCategory[0].text

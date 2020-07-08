@@ -97,7 +97,56 @@ The group quickly came to a consensus of what we wanted for a colour scheme and 
 
 I oversaw the job and job status models within the back-end which was a many to one relationship. It made sense to continue working with these on the front end, so I handled most of the CRUD functionality for the jobs on the front-end. My groupmate who was overseeing the job index page implemented the job delete functionality as it sat within that component.
 
-Again with this project, as with the others, I wanted to take a leading orle on the design concept while implementaion was split amonst the group based on which components we were working on. THerefore, I looked after the design of the new job form, the job details card and the job update form.
+A key decision we made in developing the app was in fetching data for all jobs. We could have implemented in either front-end or back-end. We opted for the latter, so that any GET request from the front-end would only come back with jobs associated with the current user:
+
+```
+class JobBoardView(APIView):
+
+    permission_classes = (IsAuthenticated, )
+
+    def get(self, request):
+        jobs = Job.objects.filter(owner=request.user.id)
+        # jobs = Job.objects.all()
+        serialized_jobs = PopulatedJobSerializer(jobs, many=True)
+        return Response(serialized_jobs.data, status=status.HTTP_200_OK)
+```
+
+Our justification for this was to keep the application as streamlined as possible. As users increased and the database grew, a GET request for all jobs within the database to filter through on the front-end would be highly cumbersome.
+
+Again with this project, as with the others, I wanted to take a leading role on the design concept while implementation was split among st the group based on which components we were working on. THerefore, I looked after the design of the new job form, the job details card and the job update form.
+
+The job details page took advantage of the 'panes' component of Semantic UI. Panes are Semtic's term for tabs, which enabled us to neatly compartmentalise and display information associated with a particular job. We divided our panes into Job details, Task and Contacts.
+
+![JOBR job details](frontend/src/assets/jobr-job-details.jpg)
+
+Semantic's documentation was very clear in how to setup the panes which utilised an array of objects:
+
+```
+  const panes = [
+    {
+      menuItem: 'Job details',
+      displayName: 'JobDetails',
+      render: function () {
+        return <Tab.Pane attached={false}><JobDetails job={job} /></Tab.Pane>
+      }
+    },
+    {
+      menuItem: 'Tasks',
+      displayName: 'JobRelatedTasks',
+      render: function () {
+        return <Tab.Pane attached={false}><JobRelatedTasks job={job} /></Tab.Pane>
+      }
+    },
+    {
+      menuItem: 'Contacts',
+      displayName: 'JobRelatedContacts',
+      render: function () {
+        return <Tab.Pane attached={false}><JobRelatedContacts job={job} /></Tab.Pane>
+      }
+    }
+  ]
+  ```
+  Each pane contained information required by Semantic UI and React including which component associated with a job to display. We felt this was a nice way to present the job details and not overload the job details page with too much information upfront.
 
 ## Wins and challenges
 

@@ -13,9 +13,11 @@ To install and run this app, make sure you have NPM and run `yarn install` to ge
 ## Table of contents
 
 * [Brief](#Brief)
+* [Build](#Build)
 * [Final product](#Final-product)
 * [Wins and challenges](#Wins-and-challenges)
 * [Bugs](#Bugs)
+* [Conclusion](#In-summary)
 
 ## Brief
 
@@ -39,6 +41,32 @@ To install and run this app, make sure you have NPM and run `yarn install` to ge
 * Yarn
 * Axios
 * Semantic UI
+
+## Build 
+
+### Day one
+
+We spent most of the first day planning, wireframing and researching CSS frameworks to use for the project. As with the previous project we used Trello and Miro to help organise ourselves and to come to a consensus on how we wanted to approach development.
+
+![Trello](frontend/src/assets/jobr-trello.jpg)
+
+### Day two
+
+Given my experience in the previous project where I felt we dedicated too much time to developing the back-end, I pushed to start and finish our back-end for JOBR within one day. And working with a brilliant team, we were able to do it! It took the entire day, but freed us up to do some thorough testing the following morning.
+
+### Day three
+
+We used the entire morning of day three to manually test and troubleshoot the back-end, so we could be confident moving into work on the front-end. That afternoon, we connected both front and back-ends and started putting the application together. I looked after the CRUD functions for jobs, so got to work on those straight away.
+
+As this was the day we started on the front-end this is also when we had a commit to a CSS framework. Having worked extensively with Bulma in previous projects and assignments, we wanted to take on the challenge of working within a new framework. Ultimately, we settled on Semantic UI, as it came with ready-made React component that we could easily import into other components throughout the app.
+
+### Day four through seven
+
+This time was spent predominantly developing the front-end. There were a few occasions where we had to update the back-end based on certain actions and requirements in the front-end, which we were able to do easily.
+
+### Day eight
+
+On the day of submission, we used this time to tidy up the code and double check the design was consistent across the entire application. We were also able to test the front-end and debug code accordingly.
 
 ## Final product
 
@@ -79,7 +107,7 @@ For this project we had the option of working alone or in a group of up to three
 
 ### Challenges 
 
-As mentioned above, React Hooks and using Semantic UI, a new CSS framework with which we had no experience prior to this project, were the biggest challanges throughout due to their novelty. I can only re-emphasise that working within a group enabled us to understand and correctly implement both of these technologies and come away with a solid portfolio piece.
+As mentioned above, React Hooks and using Semantic UI, a new CSS framework with which we had no experience prior to this project, were the biggest challenges throughout due to their novelty. I can only re-emphasise that working within a group enabled us to understand and correctly implement both of these technologies and come away with a solid portfolio piece.
 
 ### Future content
 
@@ -87,4 +115,8 @@ New features would include:
 
 * Allow creation of multiple boards
 * Ability to share board(s) with others
-* Enable swiping between job status colukn on mobile and tablet views
+* Enable swiping between job status column on mobile and tablet views
+
+## In summary
+
+I loved working on JOBR. It was a great team and we were able to produce a full stack application which we were all extremely proud of.
